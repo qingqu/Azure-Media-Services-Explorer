@@ -4864,7 +4864,7 @@ namespace AMSExplorer
                         TokenAudience = credentialsEntry.Environment.AADSettings.TokenAudience,
                         ValidateAuthority = true
                     };
-                    var cred = await ApplicationTokenProvider.LoginSilentAsync(this.credentialsEntry.AadTenantId, clientCredential, ActiveDirectoryServiceSettings.Azure);
+                    var cred = await ApplicationTokenProvider.LoginSilentAsync(this.credentialsEntry.AadTenantId, clientCredential, set);
 
                     // Getting Media Services accounts...
                     AMSclient = new AzureMediaServicesClient(environment.ArmEndpoint, cred);
